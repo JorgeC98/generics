@@ -25,23 +25,78 @@ public class Generics {
         items.add("leon");
         items.add(5f);
         items.add(1.0);*/
-        League<Team<BaseballPlayer>> baseballLeague = new League<>("MLB");
-                
-        Team<BaseballPlayer> jorge1 = new Team<>("jorge1");
-        Team<BaseballPlayer> jorge2 = new Team<>("jorge2");
-        Team<BaseballPlayer> jorge3 = new Team<>("jorge3");
-        Team<BaseballPlayer> eduardo1 = new Team<>("eduardo1");
-        Team<BaseballPlayer> eduardo2 = new Team<>("eduardo2");
-        Team<BaseballPlayer> eduardo3 = new Team<>("eduardo3");
         
-        League<Team<VolleyballPlayer>> bolleyballLeague = new League<>("");
         
-        Team<VolleyballPlayer> osvaldo1 = new Team<>("osvaldo1");
-        Team<VolleyballPlayer> osvaldo2 = new Team<>("osvaldo2");
-        Team<VolleyballPlayer> osvaldo3 = new Team<>("osvaldo3");
-        Team<VolleyballPlayer> rodrigo1 = new Team<>("osvaldo1");
-        Team<VolleyballPlayer> rodrigo2 = new Team<>("osvaldo2");
-        Team<VolleyballPlayer> rodrigo3 = new Team<>("osvaldo3");
+        
+        
+        Team<BaseballPlayer> redsocks = new Team<>(" Red Socks ");
+        
+        BaseballPlayer jorge1 = new BaseballPlayer("jorge1");
+        BaseballPlayer jorge2 = new BaseballPlayer("jorge2");
+        BaseballPlayer jorge3 = new BaseballPlayer("jorge3");
+        
+        
+        Team<BaseballPlayer> sanfra = new Team<>(" San Francisco ");
+        
+        BaseballPlayer eduardo1 = new BaseballPlayer("eduardo1");
+        BaseballPlayer eduardo2 = new BaseballPlayer("eduardo2");
+        BaseballPlayer eduardo3 = new BaseballPlayer("eduardo3");
+        
+        
+        Team<VolleyballPlayer> linces = new Team<>(" Linces ");
+        
+        VolleyballPlayer osvaldo1 = new VolleyballPlayer("osvaldo1");
+        VolleyballPlayer osvaldo2 = new VolleyballPlayer("osvaldo2");
+        VolleyballPlayer osvaldo3 = new VolleyballPlayer("osvaldo3");
+        
+        
+        
+        Team<VolleyballPlayer> borregos = new Team<>(" Borregos ");
+        
+        VolleyballPlayer rodrigo1 = new VolleyballPlayer("rodrigo1");
+        VolleyballPlayer rodrigo2 = new VolleyballPlayer("rodrigo2");
+        VolleyballPlayer rodrigo3 = new VolleyballPlayer("rodrigo3");
+        
+        
+      
+        redsocks.addPlayer(jorge1);
+        redsocks.addPlayer(jorge2);
+        redsocks.addPlayer(jorge3);
+        
+        sanfra.addPlayer(eduardo1);
+        sanfra.addPlayer(eduardo2);
+        sanfra.addPlayer(eduardo3);
+        
+        linces.addPlayer(osvaldo1);
+        linces.addPlayer(osvaldo2);
+        linces.addPlayer(osvaldo3);
+        
+        borregos.addPlayer(rodrigo1);
+        borregos.addPlayer(rodrigo2);
+        borregos.addPlayer(rodrigo3);
+        
+        League<Team<BaseballPlayer>> mlb = new League("MLB");
+        
+        mlb.add(sanfra);
+        mlb.add(redsocks);
+        
+        League<Team<VolleyballPlayer>> vwc = new League("VOLLEY LEAGUE");
+        
+        vwc.add(linces);
+        vwc.add(borregos);
+        //vwc.add(redsocks);
+        
+        redsocks.matchResult(sanfra, 3, 2);
+        
+        
+        linces.matchResult(borregos, 1, 2);
+        
+        mlb.showLeagueTable();
+        
+        vwc.showLeagueTable();
+        
+        
+        
         
     }
     
